@@ -1,13 +1,48 @@
-Audrey, Steven, & Owen
-Data collected on 10/23/2024, 10/28/2024, 11/04/2024, & 11/05/2024
-data ownership and licensing information
-basic description of the project (3-4 sentences)
+Project Members:
 
-description of the sensor setup:
-    - equipment (sensors, part numbers)
-    - wiring
-    - description of python program
+Audrey Lee, Steven M. Cuello, and Owen Kane
 
-index of files, file structure
+Dates of Data Collection:
 
-Variables & Units:
+10/18/2024, 10/21/2024, 10/23/2024, 10/25/2024, 10/28/2024, 11/04/2024, and 11/05/2024 
+
+Data Ownership and Licensing Information:
+
+*...*
+
+Project Description:
+
+This project is aimed at collection and analysis of environmental and spatial data across wealth gradients in New York City to explore the relationship between	an area's wealth and its air quality. Measurements were taken simultaneously for particulate matter (PM), CO2, temperature, relative humidity (RH), and location. Data collection occurred in various areas of Brooklyn and Manhattan. The project's design, implementation, and analysis is conducted by each of the project members listed at the top of this document. 
+
+Description of The Sensor Setup (Equipment):
+
+1. Adafruit Metro RP2040 (main microcontroller)
+2. Adafruit SCD-40 (sensor for CO2, temp., and RH)
+3. Adafruit PMSAOO3I Air Quality Breakout (sensor for different size PM)
+4. Adafruit Grayscale 1.5" 128x128 OLED Graphic Display (OLED display for incoming data)
+5. Adafruit GPS (collects spatial data)
+6. 8xAA Battery Pack (mobile power source)
+7. *5* Jumper Wires (for connecting Adafruit components)
+8. *25gb* MicroSD (for data storage)
+
+Description of The Sensor Setup (Wiring):
+
+Jumper wires were used to connect each of the Adafruit components. The MicroSD card was inserted on to the SD slot of the Adafruit Metro. The battery pack was connected to the power connection slot on the Adafruit Metro. To begin data collection, the on/off switch on the battery pack was flicked to the "on" setting. To stop data collection, the on/off switch on the battery pack was flicked to the "off" setting.
+
+Description of The Sensor Setup (Sensor Program ("sensor.program.py") Description): 
+
+The program we used is designed to collect and store environmental data. First, the program imports the necessary libraries and interfaces for the Adafruit components. Second, the program establishes/defines functions for each of the Adafruit sensors, the GPS, and the MicroSD. Third, the program tells the sensors to begin periodic measurements, it tells the MicroSD to create a file to log the incoming data, and it sets the display parameters for the OLED so some data can be displayed in real time (this step is to ensure that data is indeed being collected, and the program is working as intended). Fourth, the program begins a loop so that environmental and spatial data can be continuously collected and stored. 
+
+Index of Files:
+
+[1] "data/10 21 .csv" [2] "data/10 23 (2).csv" [3] "data/10 23 (3).csv" [4] "data/10 23 (4).csv" [5] "data/10 23 (5).csv" [6] "data/10 23(6).csv" [7] "data/1023.csv" [8] "data/10 25.csv" [9] "data/10 28.csv" [10] "data/1242766684.csv" [11] "data/1697735043.csv" [12] "data/1851130194.csv" [13] "data/2069533743.csv" [14] "data/2086818497.csv" [15] "data/2282816459.csv" [16] "data/2328929354.csv" [17] "data/2541311756.csv" [18] "data/2725645561.csv" [19] "data/2830742495.csv" [20] "data/2844046994.csv" [21] "data/3123632325.csv" [22] "data/3188887123.csv" [23] "data/3271237794.csv" [24] "data/364554498.csv" [25] "data/3649175551.csv" [26] "data/3759276184.csv" [27] "data/3810411105.csv" [28] "data/3965708704.csv" [29] "data/4253374936.csv" [30] "data/4260595750.csv" [31] "data/4262398654.csv" [32] "data/621433429.csv" [33] "data/752088744.csv" [34] "data/824215044.csv" 
+
+File Structure:
+
+For each iteration of data collection, a .csv file was created that would create a new row for every incoming data, with columns for each data variable (listed in the following section). Sometimes the sensor program would give an error, so the program would have to be manually reset, resulting in multiple .csv data files for each date of data collection. Also, when a .csv file was created, its file name was assigned as a random 32bit number value. However, some files were manually renamed post-data collection. This is why .csv files [1-9] are named differently from .csv files [10-34].
+
+Variables and Units of The Data Collected:
+
+CO2 (ppm), Temperature (Celsius), Relative Humidity (%RH), PM100 (ppm), PM50 (ppm), PM25 (ppm), PM10 (ppm), PM05 (ppm), PM03 (ppm), GPS (longitudinal and latitudinal coordinates), *socioeconomic data*
+
+
