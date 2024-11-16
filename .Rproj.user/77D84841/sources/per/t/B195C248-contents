@@ -37,4 +37,6 @@ dat2 <- dat2 %>%
 
 View(dat2)
 
-plot(dat2$rh ~ dat2$temp_C)
+plot(dat2$particles05um ~ dat2$particles03um, xlab = "PM03 (ppm)", 
+     ylab = "PM05 (ppm)", main = "PM03 vs. PM05", xlim = c(0, 4200),
+     las = 1, ylim = c(0, 1350), col.main = "red")
