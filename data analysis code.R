@@ -1,6 +1,8 @@
 require(tidyverse)
 require(lubridate)
 require(sf)
+require(terra)
+require(raster)
 
 tempdata<-read_csv("data/10 28.csv")
 
@@ -40,3 +42,14 @@ View(dat2)
 plot(dat2$particles05um ~ dat2$particles03um, xlab = "PM03 (ppm)", 
      ylab = "PM05 (ppm)", main = "PM03 vs. PM05", xlim = c(0, 4200),
      las = 1, ylim = c(0, 1350), col.main = "red")
+
+list.files(recursive = TRUE)
+
+bc2122 <- rast("Data/nyc_pm_bc/aa14_bc300m/hdr.adf")
+pm2122 <- rast("Data/nyc_pm_bc/aa14_pm300m/hdr.adf")
+
+newcrs <- "+proj=longlat +datum=WGS84"
+bc2122.wgs <- project(bc2122, newcrs)
+pm2122.wgs <- project(pm2122, newcrs)
+
+small.extent <- raster::extent(-74.1, -73.8, 40.6, 40.9)
